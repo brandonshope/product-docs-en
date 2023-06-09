@@ -187,6 +187,12 @@ To test that the Wallarm Sidecar proxy operates correctly:
     ```bash
     curl http://<APPLICATION_CLUSTER_IP>/etc/passwd
     ```
+    Test via the POD IP/Localhost directly. Based on this example the App Port is 80 and the NGINX Port is 26001.
+    ```bash
+    curl http://localhost:26001/etc/passwd
+    ```
+    Alternatively, you can change the iptable config following documentation.
+    https://docs.wallarm.com/installation/kubernetes/sidecar-proxy/customization/#capturing-incoming-traffic-port-forwarding
 
     Since the Wallarm proxy operates in the **monitoring** [filtration mode](../../../admin-en/configure-wallarm-mode.md) by default, the Wallarm node will not block the attack but will register it.
 
